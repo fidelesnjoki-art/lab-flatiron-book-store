@@ -43,5 +43,55 @@ const bookStore = {
     ]
 }
 
-// Write your code here!
+// Write your code here!{
+// document.addEventListener("DOMContentLoaded",function(){
+//   let bookStoreTitle = document.getElementById("header");
+//  bookStoreTitle.textContent = bookStore.name;
+// )}
 
+ let bookList = document.getElementById("book-list");
+
+ for (let book of bookStore.books) {
+ 
+    let bookContainer =document.createElement("li")
+
+    let bookTitle = document.createElement("h3");
+    bookTitle.textContent = book.title;
+
+    let bookAuthor = document.createElement("p");
+    bookAuthor.textContent = book.author;
+
+    let bookImage = document.createElement("img");
+    bookImage.src =book.imageUrl;
+
+     bookContainer.appendChild(bookTitle);
+     bookContainer.appendChild(bookAuthor);
+    bookContainer.appendChild(bookImage)  
+     bookList.appendChild(bookContainer)
+
+ }
+ const elementToDelete= document.getElementById("delete-this");
+ elementToDelete.remove();
+
+// const bookList = document.getElementById('book-list');
+
+// //  Loop and create elements for each book
+// bookStore.books.forEach(function(book) {
+//     const bookContainer = document.createElement('li');
+
+//     const bookTitle = document.createElement('h3');
+//     bookTitle.textContent = book.title;
+
+//     const bookAuthor = document.createElement('p');
+//     bookAuthor.textContent = book.author;
+
+//     const bookImage = document.createElement('img');
+//     bookImage.src = book.imageUrl;
+
+//     bookContainer.append(bookTitle, bookAuthor, bookImage);
+//     bookList.append(bookContainer);
+// });
+
+// // Delete the placeholder element
+// const elementToDelete = document.getElementById('delete-this');
+// elementToDelete.remove();
